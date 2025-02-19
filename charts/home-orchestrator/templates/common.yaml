@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.application.appName }}
+  labels:
+    name: {{ .Values.application.appName }}
+    role: agent
+spec:
+  updateStrategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      labels: 
+        name: {{ .Values.application.appName }}
+      annotations:
+        node.kubernetes.io/bootstrap-checkpoint: "true"
+    spec: 
+      hostname: {{ .Values.application.appName }}
+      hostNetwork: false
+      dnsPolicy: ClusterFirstWithHostNet
+      containers:
+      - name: {{ .Values.application.appName }}
+        image: {{ .Values.application.appName }}
+        env:
+        - name: OLLAMA_HOST_URL
+          value: http://{{ .Values.configuration.nameHost }}:{{ .Values.configuration.portHost }}
+        - name: OLLAMA_GUEST_URL
+          value: http://{{ .Values.configuration.nameGuest }}:{{ .Values.configuration.portGuest }}
+        - name: OLLAMA_MODEL
+          value: {{ .Values.configuration.model }}
+        - name: OLLAMA_MAX_RETRIES
+          value: "300"
+        - name: OLLAMA_WAIT_FOREVER
+          value: "1"
+        command: ["/app/initial_setup.sh"]
+        imagePullPolicy: IfNotPresent
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop: ["ALL"]
+      terminationGracePeriodSeconds: 30
