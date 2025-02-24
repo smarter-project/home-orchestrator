@@ -4,6 +4,8 @@
 
 application:
   appName: home-orchestrator
+  image: ghcr.io/smarter-project/home-orchestrator
+  imageVersion: sha256-6cebd1c4956840b93222b9ac0ad0692756fe0587fc4d0c24be6ceba4e20b8176.sig
 
 configuration:
   nameGuest: ollama
