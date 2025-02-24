@@ -19,7 +19,7 @@ spec:
       dnsPolicy: ClusterFirstWithHostNet
       containers:
       - name: {{ .Values.application.appName }}
-        image: {{ .Values.application.appName }}
+        image: {{ .Values.application.image }}:{{ .Values.application.imageVersion }}
         env:
         - name: OLLAMA_HOST_URL
           value: http://{{ .Values.configuration.nameHost }}:{{ .Values.configuration.portHost }}
