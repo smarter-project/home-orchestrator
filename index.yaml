@@ -14,6 +14,32 @@ entries:
         url: https://smarter-project.github.io/documentation/pgp_keys.asc
     apiVersion: v2
     appVersion: 2.0.1
+    created: "2025-02-27T22:08:42.920734377Z"
+    description: Smarter-Home security edgeAI orchestrator
+    digest: ea640b66846ef7e749d3342bf9e99a0ea4b5ff88cd9ca491555fdcc05d3f1c06
+    home: https://getsmarter.io
+    icon: https://github.com/smarter-project/documentation/raw/main/ARM1636_Project_Logo_ST2_RGB_V1.png
+    kubeVersion: '>=1.18.0-0'
+    name: home-orchestrator
+    sources:
+    - https://github.com/smarter-project/documentation
+    type: application
+    urls:
+    - https://github.com/smarter-project/home-orchestrator/releases/download/home-orchestrator-2.0.1/home-orchestrator-2.0.1.tgz
+    version: 2.0.1
+  - annotations:
+      artifacthub.io/changes: |
+        - Initial release
+      artifacthub.io/license: Apache-2.0
+      artifacthub.io/maintainers: |
+        - name: Eric Van Hensbergen
+          email: ericvh@gmail.com
+      artifacthub.io/prerelease: "false"
+      artifacthub.io/signKey: |
+        fingerprint: 71EDA4E3D652DC73EB09E3A5387D298C169CF24E
+        url: https://smarter-project.github.io/documentation/pgp_keys.asc
+    apiVersion: v2
+    appVersion: 2.0.1
     created: "2025-02-25T21:11:20.489943517Z"
     description: Smarter-Home security edgeAI orchestrator
     digest: 9b1f8b044ddd689d78586a5ae5baa44869b0582e911e9498aef8f727b30ac0e8
@@ -27,4 +53,4 @@ entries:
     urls:
     - https://github.com/smarter-project/home-orchestrator/releases/download/home-orchestrator-2.0.0/home-orchestrator-2.0.0.tgz
     version: 2.0.0
-generated: "2025-02-25T21:11:20.489953516Z"
+generated: "2025-02-27T22:08:42.920742001Z"
