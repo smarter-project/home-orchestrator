@@ -8,8 +8,8 @@ application:
   imageVersion: main
 
 configuration:
-  nameGuest: ollama
+  nameGuest: home-orchestrator-ollama-guest
   portGuest: 31434
-  nameHost: ollama
+  nameHost: home-orchestrator-ollama-host
   portHost: 31435
   model: llama3.2:1b-instruct-q4_K_M
