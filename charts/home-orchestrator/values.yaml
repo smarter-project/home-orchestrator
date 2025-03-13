@@ -13,3 +13,4 @@ configuration:
   nameHost: home-orchestrator-ollama-host
   portHost: 31435
   model: llama3.2:1b-instruct-q4_K_M
+  ollamaVersion: "latest"
