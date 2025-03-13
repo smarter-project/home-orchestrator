@@ -73,7 +73,7 @@ spec:
           - name: models
             mountPath: /root/.ollama
       - name: ollama-guest
-        image: ollama/ollama
+        image: ollama/ollama:{{ .Values.configuration.ollamaVersion }}
         env:
         - name: OLLAMA_HOST
           value: http://0.0.0.0:{{ .Values.configuration.portGuest }}

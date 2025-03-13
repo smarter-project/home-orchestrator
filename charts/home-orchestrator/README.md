@@ -32,3 +32,9 @@ helm delete home-orchestrator --namespace <namespace to use>
 
 | Name | Description | Value |
 | ---- | ----------- | ----- |
+| configuration.nameGuest | set DNS service name to access ollama-guest | home-orchestrator-ollama-guest |
+| configuration.portGuest | set TCP port ollama-guest will used | 31434 |
+| configuration.nameHost | set DNS service name to access ollama-host | home-orchestrator-ollama-host |
+| configuration.portHost | set TCP port ollama-host will used | 31435 |
+| configuration.model | set model to preload | llama3.2:1b-instruct-q4_K_M |
+| configuration.ollamaVersion | set ollama version to use | "latest" |
