@@ -88,9 +88,10 @@ spec:
       volumes:
         - name: models
           hostPath:
-            path: /srv/shared-container-volumes/ollama:/root/.ollama
+            path: {{ .Values.configuration.hostVolumePath }}:/root/.ollama
       terminationGracePeriodSeconds: 30
 ---
+#            path: /srv/shared-container-volumes/ollama:/root/.ollama
 #  apiVersion: v1
 #  kind: Service
 #  metadata:
