@@ -17,6 +17,11 @@ spec:
       hostname: {{ .Values.application.appName }}
       hostNetwork: false
       dnsPolicy: ClusterFirstWithHostNet
+      {{- if .Values.configuration }}
+      {{- if .Values.configuration.runtimeClassOrchestrator }}
+      runtimeClassName: {{ .Values.configuration.runtimeClassOrchestrator }}
+      {{- end }}
+      {{- end }}
       containers:
       - name: {{ .Values.application.appName }}
         image: {{ .Values.application.image }}:{{ .Values.application.imageVersion }}
@@ -58,6 +63,11 @@ spec:
       hostname: {{ .Values.application.appName }}-ollama
       hostNetwork: false
       dnsPolicy: ClusterFirstWithHostNet
+      {{- if .Values.configuration }}
+      {{- if .Values.configuration.runtimeClassOllama }}
+      runtimeClassName: {{ .Values.configuration.runtimeClassOllama }}
+      {{- end }}
+      {{- end }}
       containers:
       - name: ollama-host
         image: ollama/ollama:{{ .Values.configuration.ollamaVersion }}
