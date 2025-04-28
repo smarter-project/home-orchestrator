@@ -15,3 +15,5 @@ configuration:
   model: llama3.2:1b-instruct-q4_K_M
   ollamaVersion: "latest"
   hostVolumePath: /srv/shared-container-volumes/ollama
+# runtimeClassOllama: default
+# runtimeClassOrchestrator: default
