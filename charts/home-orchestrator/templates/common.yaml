@@ -128,6 +128,7 @@ spec:
 #        targetPort: {{ .Values.configuration.portGuest }}
 #        nodePort: {{ .Values.configuration.portGuest }}
 #  ---
+{{- if eq .Values.configuration.hostNetworkOllama false }}
 apiVersion: v1
 kind: Service
 metadata:
@@ -151,3 +152,4 @@ spec:
     - port: {{ .Values.configuration.portGuest }}
       targetPort: {{ .Values.configuration.portGuest }}
       protocol: TCP
+{{- end }}
