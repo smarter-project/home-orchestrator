@@ -15,7 +15,7 @@ spec:
         app: {{ .Values.application.appName }}
     spec: 
       hostname: {{ .Values.application.appName }}
-      hostNetwork: false
+      hostNetwork: {{ .Values.configuration.hostNetworkOrchestrator }}
       dnsPolicy: ClusterFirstWithHostNet
       {{- if .Values.configuration }}
       {{- if .Values.configuration.runtimeClassOrchestrator }}
@@ -61,7 +61,7 @@ spec:
         app: {{ .Values.application.appName }}-ollama
     spec: 
       hostname: {{ .Values.application.appName }}-ollama
-      hostNetwork: false
+      hostNetwork: {{ .Values.configuration.hostNetworkOllama }}
       dnsPolicy: ClusterFirstWithHostNet
       {{- if .Values.configuration }}
       {{- if .Values.configuration.runtimeClassOllama }}
